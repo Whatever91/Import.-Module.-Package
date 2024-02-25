@@ -1,0 +1,6 @@
+dash== 2.15.0
+jmespath== 1.0.1
+requests== 2.31.0
+chardet== 5.2.0
+homeassistant== 2024.2.3
+Flask== 3.0.2
