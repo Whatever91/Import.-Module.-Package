@@ -1,20 +1,17 @@
 from datetime import datetime
+import configparser
 
-import cowsay
-import pyttsx3
+from Application.DataBase.people import get_employees
+from Application.salary import calculate_salary
 
-from application.salary import calculate_salary
-from application.db.people import get_employees
 
-def cow_say():
-    engine = pyttsx3.init()
-    phrase = "Python is my favorite programming language"
-    cowsay.cow(phrase)
-    engine.say(phrase)
-    engine.runAndWait()
+def now_utcnow():
+    print('Знакомство с модулем "datetime".\nЗапуск функции:')
+    print(f'Текущая дата и время: {datetime.now()}')
+    print(f'Текущая дата и время UTC: {datetime.utcnow()}\n')
+
 
 if __name__ == '__main__':
-    print("Не сегодня:", datetime.now().strftime("%H:%M:%S %d-%m-%Y "))
-    get_employees()
     calculate_salary()
-    cow_say()
+    get_employees()
+    now_utcnow()
